@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
 using Il2CppAssets.Scripts.Database;
-using MelonLoader;
 using UnlockSpecialWelcomeScreens.Managers;
 
 namespace UnlockSpecialWelcomeScreens.Patches;

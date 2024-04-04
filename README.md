@@ -12,4 +12,4 @@
 2. Move `UnlockSpecialWelcomeScreens.dll` to `${Your muse dash folder}/Mods`.
 3. Enjoy!
 
-##  ❗Check out my other [mods](https://github.com/Asgragrt#musedash-modding)❗
+## ❗Check out my other [mods](https://github.com/Asgragrt#musedash-modding)❗
