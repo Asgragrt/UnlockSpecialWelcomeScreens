@@ -1,5 +1,7 @@
 # UnlockSpecialWelcomeScreens
 
+Unlock special welcome and loading screens.
+
 ## ❗Check out my other [mods](https://github.com/Asgragrt#musedash-modding)❗
 
 ## Installation
