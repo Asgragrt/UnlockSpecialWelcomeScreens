@@ -6,6 +6,8 @@ using UnlockSpecialWelcomeScreens.Managers;
 
 namespace UnlockSpecialWelcomeScreens.Patches;
 
+using static ModManager;
+
 [HarmonyPatch(typeof(ItemManager), nameof(ItemManager.Init))]
 internal static class ItemManagerPatch
 {
@@ -16,15 +18,29 @@ internal static class ItemManagerPatch
         //--------------------------------------------------------------------+
         // Welcome screens
         //--------------------------------------------------------------------+
-        var unlockedWelcomeList = items.FindAll((Func<IData, bool>)ModManager.IsWelcome);
+        var unlockedWelcomeList = items.FindAll((Func<IData, bool>)IsWelcome);
 
-        ModManager.WelcomeExchangeIndexes.RemoveWhere(
+        WelcomeExchangeIndexes.RemoveWhere(
             idx => unlockedWelcomeList.Exists(
-                (Func<IData, bool>)(data => ModManager.CheckDataIndex(data, idx))
+                (Func<IData, bool>)(data => CheckDataIndex(data, idx))
             )
         );
 
-        foreach (var lockedExchangeWelcomeIndex in ModManager.WelcomeExchangeIndexes)
+        foreach (var lockedExchangeWelcomeIndex in WelcomeExchangeIndexes)
             __instance.AddItem("welcome", lockedExchangeWelcomeIndex, 5);
+
+        //--------------------------------------------------------------------+
+        // Welcome screens
+        //--------------------------------------------------------------------+
+        var unlockedLoadingList = items.FindAll((Func<IData, bool>)IsLoading);
+
+        LoadingExchangeIndexes.RemoveWhere(
+            idx => unlockedLoadingList.Exists(
+                (Func<IData, bool>)(data => CheckDataIndex(data, idx))
+            )
+        );
+
+        foreach (var lockedExchangeLoadingIndex in LoadingExchangeIndexes)
+            __instance.AddItem("loading", lockedExchangeLoadingIndex, 5);
     }
 }

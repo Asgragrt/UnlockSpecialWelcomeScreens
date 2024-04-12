@@ -27,8 +27,10 @@ internal static class DBPatch
 
     [HarmonyPatch(typeof(DBConfigLoading), nameof(DBConfigLoading.GetLoadingInfoByIndex))]
     [HarmonyPostfix]
-    internal static void LoadingPostfix(LoadingInfo __result)
+    internal static void LoadingPostfix(int index, LoadingInfo __result)
     {
-        __result.exchange = false;
+        if (!__result.exchange) return;
+
+        LoadingExchangeIndexes.Add(index);
     }
 }
