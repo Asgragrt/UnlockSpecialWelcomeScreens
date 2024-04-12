@@ -1,5 +1,7 @@
 # UnlockSpecialWelcomeScreens
 
+## ❗Check out my other [mods](https://github.com/Asgragrt#musedash-modding)❗
+
 ## Installation
 
 ### Prerequisites
@@ -11,5 +13,3 @@
 1. Download the latest release from [releases](https://github.com/Asgragrt/UnlockSpecialWelcomeScreens/releases/latest).
 2. Move `UnlockSpecialWelcomeScreens.dll` to `${Your muse dash folder}/Mods`.
 3. Enjoy!
-
-## ❗Check out my other [mods](https://github.com/Asgragrt#musedash-modding)❗
