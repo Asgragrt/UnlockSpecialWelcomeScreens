@@ -24,7 +24,6 @@ internal static class DBPatch
     //--------------------------------------------------------------------+
     // Loading screens
     //--------------------------------------------------------------------+
-
     [HarmonyPatch(typeof(DBConfigLoading), nameof(DBConfigLoading.GetLoadingInfoByIndex))]
     [HarmonyPostfix]
     internal static void LoadingPostfix(int index, LoadingInfo __result)
