@@ -11,7 +11,7 @@ internal static class ItemManagerPatch
 {
     internal static void Postfix(ItemManager __instance)
     {
-        UnlockExchangeWelcome(__instance);
-        UnlockExchangeLoading(__instance);
+        LoadingUnlocker.UnlockExchange(__instance);
+        WelcomeUnlocker.UnlockExchange(__instance);
     }
 }

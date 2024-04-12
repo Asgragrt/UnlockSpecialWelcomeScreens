@@ -18,7 +18,7 @@ internal static class DBPatch
     {
         if (!__result.exchange) return;
 
-        WelcomeExchangeIndexes.Add(index);
+        WelcomeUnlocker.AddToSet(index);
     }
 
     //--------------------------------------------------------------------+
@@ -31,6 +31,6 @@ internal static class DBPatch
     {
         if (!__result.exchange) return;
 
-        LoadingExchangeIndexes.Add(index);
+        LoadingUnlocker.AddToSet(index);
     }
 }
