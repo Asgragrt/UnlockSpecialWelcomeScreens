@@ -4,6 +4,8 @@ using UnlockSpecialWelcomeScreens.Managers;
 
 namespace UnlockSpecialWelcomeScreens.Patches;
 
+using static ModManager;
+
 //--------------------------------------------------------------------+
 // Welcome screens
 //--------------------------------------------------------------------+
@@ -12,8 +14,9 @@ internal static class DBPatch
 {
     internal static void Postfix(int index, WelcomeInfo __result)
     {
-        if (!ModManager.WelcomeIndexes.Contains(index)) return;
-        __result.exchange = false;
+        if (!__result.exchange) return;
+        
+        WelcomeExchangeIndexes.Add(index);
     }
 }
 
